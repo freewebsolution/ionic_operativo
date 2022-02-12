@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable, pipe} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Piatto } from '../models/piatto';
 import { ErrorhttpService } from './errorhttp.service';
@@ -13,8 +13,8 @@ export class PiattiService {
   constructor(private http: HttpClient, private httpError: ErrorhttpService) { }
 
   getPiatti(): Observable<Piatto[]> {
-    return this.http.get<Piatto[]>(`${apiUrl}piatti`);
-                    //.pipe(catchError(this.httpError.errorHandler));
+    return this.http.get<Piatto[]>(`${apiUrl}piatti`)
+                    .pipe(catchError(this.httpError.errorHandler));
   }
 }
 

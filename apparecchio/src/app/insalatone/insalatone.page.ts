@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {InsalatoneService} from "../services/insalatone.service";
+import {Piatto} from "../models/piatto";
 
 @Component({
   selector: 'app-insalatone',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./insalatone.page.scss'],
 })
 export class InsalatonePage implements OnInit {
+  private insalate:Piatto[];
+  private piattierrMsg: string;
+  constructor(private insalataService: InsalatoneService) { }
 
-  constructor() { }
+  ngOnInit():void {
+    this.insalataService.getInsalatone().subscribe(
+      insalate =>this.insalate = insalate,
+      errMsg => this.piattierrMsg = errMsg
 
-  ngOnInit() {
+    )
   }
 
 }
