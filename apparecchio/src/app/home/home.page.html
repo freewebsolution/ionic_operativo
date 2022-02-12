@@ -14,7 +14,13 @@
   </ion-header>
 
   <div id="container">
-    <strong>My first app ionic 6 di Lucio</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div *ngIf="piatti">
+      <div *ngFor="let piatto of piatti">
+        {{piatto.titolo}}
+      </div>
+    </div>
+  </div>
+  <div [hidden] ="piatti || piattierrMsg">
+    Caricamento in corso
   </div>
 </ion-content>

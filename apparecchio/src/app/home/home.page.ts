@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Piatto } from '../models/piatto';
+import { PiattiService } from '../services/piatti.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   private piatti: Piatto[];
-  constructor() { }
+ private piattierrMsg: string;
+  constructor(private piattiService: PiattiService, ) { }
+
+  ngOnInit(): void {
+    this.piattiService.getPiatti().subscribe(
+      piatti => this.piatti = piatti,
+      errMsg => this.piattierrMsg = errMsg
+    );
+  }
 
 }
