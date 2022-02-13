@@ -1,9 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pizze</ion-title>
+<ion-header no-border>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="sideMenu" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Pizze
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+  Click me
+</ion-button>
 </ion-content>

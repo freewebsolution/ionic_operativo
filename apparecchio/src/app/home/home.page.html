@@ -1,9 +1,7 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header no-border>
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-button (click)="onClick()">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
-      </ion-button>
+      <ion-menu-button menu="sideMenu" auto-hide="false"></ion-menu-button>
     </ion-buttons>
     <ion-title>
       Apparecchio
@@ -19,14 +17,24 @@
   </ion-header>
 
   <div id="container">
+    <div [hidden] ="piatti || piattierrMsg">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
     <div *ngIf="piatti">
       <div *ngFor="let piatto of piatti">
         {{piatto.titolo}}
       </div>
     </div>
-  </div>
-  <div [hidden] ="piatti || piattierrMsg">
-    Caricamento in corso
   </div>
 </ion-content>
 

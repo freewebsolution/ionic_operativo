@@ -17,6 +17,7 @@
       "node_modules/@angular/common/http",
       "node_modules/rxjs",
       "node_modules/rxjs/operators",
+      "node_modules/@ionic/angular",
     ],
     "module": "es2020",
     "lib": ["es2018", "dom"]
