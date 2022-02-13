@@ -11,8 +11,8 @@ export class PizzePage implements OnInit {
 
   ngOnInit() {
   }
-  onClick(){
-this.menu.open('sideMenu');
+  onClick() {
+    this.menu.open('sideMenu');
   }
 
 }

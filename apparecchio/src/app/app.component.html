@@ -1,5 +1,6 @@
 <ion-app>
-  <ion-menu contentId="sideMenu" menuId="sideMenu" side="start" type="push">
+  <ion-split-pane>
+     <ion-menu contentId="sideMenu" menuId="sideMenu" side="start" type="push">
     <ion-header no-border>
       <ion-toolbar color="dark">
         <ion-title>Menu</ion-title>
@@ -12,5 +13,5 @@
       Awesome pizza footer
     </ion-footer>
   </ion-menu>
-  <ion-router-outlet main id="sideMenu"></ion-router-outlet>
-</ion-app>
+  <ion-router-outlet main id="sideMenu"></ion-router-outlet> 
+  </ion-split-pane>
