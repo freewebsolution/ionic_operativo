@@ -9,8 +9,8 @@ import { PiattiService } from '../services/piatti.service';
 })
 export class HomePage implements OnInit {
   private piatti: Piatto[];
- private piattierrMsg: string;
-  constructor(private piattiService: PiattiService, @Inject('apiUrl') private apiUrl ) { }
+  private piattierrMsg: string;
+  constructor(private piattiService: PiattiService, @Inject('apiUrl') private apiUrl) { }
 
   ngOnInit(): void {
     this.piattiService.getPiatti().subscribe(

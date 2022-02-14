@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Team } from '../models/team';
+import { SociService } from '../services/soci.service';
 
 @Component({
   selector: 'app-contatto',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContattoPage implements OnInit {
 
-  constructor() { }
+  private soci: Team[];
+  private socierrMsg: string;
+  constructor(private sociService: SociService, @Inject('apiUrl') private apiUrl) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.sociService.getSoci().subscribe(
+      soci => this.soci = soci,
+      errMsg => this.socierrMsg = errMsg
+    );
   }
 
 }
