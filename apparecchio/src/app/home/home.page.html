@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-menu-button menu="sideMenu" auto-hide="false"></ion-menu-button>
+      <ion-menu-button menu="sideMenu"></ion-menu-button>
     </ion-buttons>
     <ion-title>
       Apparecchio
@@ -30,10 +30,18 @@
         <div class="sk-cube sk-cube9"></div>
       </div>
     </div>
-    <div *ngIf="piatti">
-      <div *ngFor="let piatto of piatti">
-        {{piatto.titolo}}
-      </div>
+    {{piattierrMsg}}
+    <div class="ion-padding">
+         <div *ngIf="piatti">
+      <ion-list>
+        <ion-item *ngFor="let piatto of piatti">
+          <ion-avatar slot="start">
+            <img src="../../assets/images/{{piatto.image}}" alt="">
+          </ion-avatar>
+          <ion-label text-wrap="true">{{piatto.titolo}} <p>{{piatto.descrizione}}</p></ion-label>
+        </ion-item>
+      </ion-list>
+    </div> 
     </div>
   </div>
 </ion-content>
