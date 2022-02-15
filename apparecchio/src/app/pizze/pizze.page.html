@@ -10,29 +10,29 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-list>
+<!--   <ion-list>
     <ion-item *ngFor="let piatto of piatti">
       <ion-grid fixed>
-        <ion-row>
+        <ion-row class="ion-align-items-center">
           <ion-col size="12" size-lg="6"><ion-img [src]="piatto.image"></ion-img></ion-col>
           <ion-col size="12" size-lg="6"><h2>{{piatto.titolo}}</h2><p>{{piatto.descrizione}}</p></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col >
+          <ion-col>
             <ion-text color="primary">
               <h1>Awesome text</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minima animi, cum fugit nemo fuga aspernatur nisi nesciunt libero esse et itaque quibusdam error dicta voluptatum mollitia praesentium at vitae!</p>
             </ion-text>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col></ion-col>
-          <ion-col></ion-col>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="4"s size-lg="2" size-xl="2" class="ion-text-center"><img src="../../assets/images/bg/bioorganic.png" alt=""></ion-col>
+          <ion-col size="4" size-lg="2" size-xl="2" class="ion-text-center"><img src="../../assets/images/bg/gluten-free.jpg" alt=""></ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-  </ion-list>
-<!--   <div class="ion-padding">
+  </ion-list> -->
+  <div class="ion-padding">
     <div *ngIf="piatti">
       <ion-list>
         <ion-item *ngFor="let piatto of piatti">
@@ -47,5 +47,5 @@
       <app-loader></app-loader>
     </div>
     {{piattierrMsg}}
-  </div> -->
+  </div>
 </ion-content>
