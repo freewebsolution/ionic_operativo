@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Piatto } from '../models/piatto';
+import { PiattiService } from '../core/services/piatti.service';
 @Component({
   selector: 'app-pizze',
   templateUrl: './pizze.page.html',
@@ -7,12 +8,15 @@ import { MenuController } from '@ionic/angular';
 })
 export class PizzePage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  private piatti: Piatto[];
+  private piattierrMsg: string;
+  constructor(private piattiService: PiattiService, @Inject('apiUrl') private apiUrl) { }
 
-  ngOnInit() {
-  }
-  onClick(){
-this.menu.open('sideMenu');
+  ngOnInit(): void {
+    this.piattiService.getPiatti().subscribe(
+      piatti => this.piatti = piatti,
+      errMsg => this.piattierrMsg = errMsg
+    );
   }
 
 }

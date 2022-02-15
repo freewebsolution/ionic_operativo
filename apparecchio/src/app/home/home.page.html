@@ -1,8 +1,8 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
-  <ion-buttons slot="start">
-    <ion-menu-button menu="sideMenu"></ion-menu-button>
-  </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="sideMenu"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
       AppARecchio
     </ion-title>
@@ -12,27 +12,41 @@
 <ion-content fullscreen>
   <div class="ion-padding">
     <div *ngIf="piatti">
+      <ion-header>
+        <ion-toolbar color="warning">
+          <ion-icon slot="start" name="pizza" class="lg"></ion-icon>
+          <ion-title>Pizze suggerite dall Chef!</ion-title>
+        </ion-toolbar>
+      </ion-header>
       <ion-list>
         <ion-item *ngFor="let piatto of piatti">
           <ion-avatar slot="start">
             <ion-img [src]="piatto.image"></ion-img>
           </ion-avatar>
-          <ion-label text-wrap="true">{{ piatto.titolo }} <p> {{ piatto.descrizione }} </p></ion-label>
+          <ion-label text-wrap="true">{{ piatto.titolo }} <p> {{ piatto.descrizione }} </p>
+          </ion-label>
         </ion-item>
       </ion-list>
     </div>
-    <div [hidden] ="piatti || piattierrMsg">
-      <div class="sk-cube-grid">
-        <div class="sk-cube sk-cube1"></div>
-        <div class="sk-cube sk-cube2"></div>
-        <div class="sk-cube sk-cube3"></div>
-        <div class="sk-cube sk-cube4"></div>
-        <div class="sk-cube sk-cube5"></div>
-        <div class="sk-cube sk-cube6"></div>
-        <div class="sk-cube sk-cube7"></div>
-        <div class="sk-cube sk-cube8"></div>
-        <div class="sk-cube sk-cube9"></div>
-      </div>
+    <div *ngIf="insalate">
+      <ion-header>
+        <ion-toolbar color="success">
+          <ion-icon slot="start" name="pizza" class="lg"></ion-icon>
+          <ion-title>Insalatone suggerite dall Chef!</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-list>
+        <ion-item *ngFor="let insalata of insalate">
+          <ion-avatar slot="start">
+            <ion-img [src]="insalata.image"></ion-img>
+          </ion-avatar>
+          <ion-label text-wrap="true">{{ insalata.titolo }} <p> {{ insalata.descrizione }} </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div [hidden]="piatti || piattierrMsg && insalate || piattierrMsg">
+      <app-loader></app-loader>
     </div>
     {{piattierrMsg}}
   </div>

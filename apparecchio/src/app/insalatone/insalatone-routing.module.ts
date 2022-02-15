@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoaderComponent } from '../shared/loader/loader.component';
 
 import { InsalatonePage } from './insalatone.page';
 
@@ -15,7 +16,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  declarations: [
+    LoaderComponent
+  ],
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, LoaderComponent],
 })
 export class InsalatonePageRoutingModule {}

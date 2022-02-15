@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Team } from '../models/team';
-import { SociService } from '../services/soci.service';
+import { SociService } from '../core/services/soci.service';
 
 @Component({
   selector: 'app-contatto',
