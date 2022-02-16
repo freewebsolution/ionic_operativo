@@ -8,8 +8,8 @@ import { PiattiService } from '../core/services/piatti.service';
 })
 export class PizzePage implements OnInit {
 
-  private piatti: Piatto[];
-  private piattierrMsg: string;
+  piatti: Piatto[];
+  piattierrMsg: string;
   constructor(private piattiService: PiattiService, @Inject('apiUrl') private apiUrl) { }
 
   ngOnInit(): void {
