@@ -4,6 +4,7 @@
 /** Ionic CSS Variables **/
 
 :root {
+    --ion-font-family: Apparecchio;
     /** primary **/
     --ion-color-primary: #3880ff;
     --ion-color-primary-rgb: 56, 128, 255;
@@ -67,6 +68,7 @@
     --ion-color-light-contrast-rgb: 0, 0, 0;
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
+    --side-menu-background: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -207,10 +209,32 @@
     src: url('../assets/font/Kalam.woff2') format('woff2');
 }
 
+ion-menu {
+    --ion-background-color: var(--side-menu-background);
+    background-image: url('./../assets/images/bg/bg.png');
+    background-size: 120%;
+    background-position: 0%;
+}
+
+ion-menu ion-item,
+.ion-item {
+    font-size: large;
+    font-weight: bold;
+    --color: #FFF;
+    --ion-text-color-rgb: rgb(255, 255, 255, 0.8)
+}
+
 .lg {
     font-size: 2rem;
 }
 
 .promo {
     font-family: Apparecchio;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.active-state {
+    --background: rgba(255, 255, 255, 0.5);
+    color: #000;
 }
