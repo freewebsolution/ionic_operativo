@@ -1,50 +1,51 @@
 <ion-split-pane when="md" contentId="sideMenu">
-  <ion-menu contentId="sideMenu" menuId="sideMenu" side="start" type="push">
-    <ion-header class="ion-no-border">
-      <ion-grid fixed>
-        <ion-row class="ion-align-items-center">
-          <ion-col size="12" size-lg="2"  class="ion-text-center">
-            <img src="../../../assets/images/bg/logo.png" alt="">
-          </ion-col>
-          <ion-col size="12" size-lg="10"  class="ion-text-center">
-            <ion-text color="dark">
-              <h1 style="font-size: 1.4em;">Pizzeria Apparecchio</h1>
-              <p>Pizze gourmet con pasta madre</p>
-            </ion-text>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-header>
-    <ion-content>
-      <ion-menu-toggle auto-hide="false">
-        <ion-list>
-          <ion-item routerLink="/home">
-            <ion-icon slot="start" name="home"></ion-icon>
-            <ion-label>Home</ion-label>
-          </ion-item>
-          <ion-item routerLink="/pizze">
-            <ion-icon slot="start" name="pizza"></ion-icon>
-            <ion-label>Pizze</ion-label>
-          </ion-item>
-          <ion-item routerLink="/insalatone">
-            <ion-icon slot="start" name="add"></ion-icon>
-            <ion-label>Insalatone</ion-label>
-          </ion-item>
-          <ion-item routerLink="/preferiti">
-            <ion-icon slot="start" name="heart"></ion-icon>
-            <ion-label>Preferiti</ion-label>
-          </ion-item>
-          <ion-item routerLink="/contatto">
-            <ion-icon slot="start" name="people-outline"></ion-icon>
-            <ion-label>Contattaci</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-menu-toggle>
+    <ion-menu contentId="sideMenu" menuId="sideMenu" side="start" type="push">
+        <ion-header class="ion-no-border">
+            <ion-grid fixed class="promo">
+                <ion-row class="ion-align-items-center">
+                    <ion-col size="12" size-lg="2" class="ion-text-center">
+                        <img src="../../../assets/images/bg/logo.png" alt="">
+                    </ion-col>
+                    <ion-col size="12" size-lg="10" class="ion-text-center">
+                        <ion-text color="dark">
+                            <h1 style="font-size: 1.4em;">Pizzeria Apparecchio</h1>
+                            <p>Pizze gourmet con pasta madre</p>
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-header>
+        <ion-content>
+            <ion-menu-toggle auto-hide="false">
+                <ion-list>
+                    <ion-item routerLink="/home">
+                        <ion-icon slot="start" name="home"></ion-icon>
+                        <ion-label>Home</ion-label>
+                    </ion-item>
+                    <ion-item routerLink="/pizze">
+                        <ion-icon slot="start" name="pizza"></ion-icon>
+                        <ion-label>Pizze</ion-label>
+                    </ion-item>
+                    <ion-item routerLink="/insalatone">
+                        <i slot="start" class="fa fa-seedling fa-2x" style="color: grey;font-size: larger;"></i>
+                        <ion-label>Insalatone
+                        </ion-label>
+                    </ion-item>
+                    <ion-item routerLink="/preferiti">
+                        <ion-icon slot="start" name="heart"></ion-icon>
+                        <ion-label>Preferiti</ion-label>
+                    </ion-item>
+                    <ion-item routerLink="/contatto">
+                        <ion-icon slot="start" name="people-outline"></ion-icon>
+                        <ion-label>Contattaci</ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-menu-toggle>
 
-    </ion-content>
-    <ion-footer>
-      Lucio Ticali - AppAccademy
-    </ion-footer>
-  </ion-menu>
-  <ion-router-outlet main id="sideMenu"></ion-router-outlet>
+        </ion-content>
+        <ion-footer>
+            Lucio Ticali - AppAccademy
+        </ion-footer>
+    </ion-menu>
+    <ion-router-outlet main id="sideMenu"></ion-router-outlet>
 </ion-split-pane>

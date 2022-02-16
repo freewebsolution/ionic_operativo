@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content fullscreen>
-    <ion-list>
+    <!-- <ion-list>
         <ion-item *ngFor="let piatto of piatti">
             <ion-grid fixed>
                 <ion-row class="ion-align-items-center">
@@ -42,21 +42,23 @@
                 </ion-row>
             </ion-grid>
         </ion-item>
-    </ion-list>
-    <!-- <div class="ion-padding">
-    <div *ngIf="piatti">
-      <ion-list>
-        <ion-item *ngFor="let piatto of piatti">
-          <ion-avatar slot="start">
-            <ion-img [src]="piatto.image"></ion-img>
-          </ion-avatar>
-          <ion-label text-wrap="true">{{ piatto.titolo }} <p> {{ piatto.descrizione }} </p></ion-label>
-        </ion-item>
-      </ion-list>
+    </ion-list> -->
+    <div class="ion-padding">
+        <div *ngIf="piatti">
+            <ion-list>
+                <ion-item *ngFor="let piatto of piatti">
+                    <ion-avatar slot="start">
+                        <ion-img [src]="piatto.image"></ion-img>
+                    </ion-avatar>
+                    <ion-label text-wrap="true">{{ piatto.titolo }}
+                        <p> {{ piatto.descrizione }} </p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div [hidden]="piatti || piattierrMsg">
+            <app-loader></app-loader>
+        </div>
+        {{piattierrMsg}}
     </div>
-    <div [hidden] ="piatti || piattierrMsg">
-      <app-loader></app-loader>
-    </div>
-    {{piattierrMsg}}
-  </div> -->
 </ion-content>
