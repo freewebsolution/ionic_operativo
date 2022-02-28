@@ -1,51 +1,81 @@
 <ion-header no-border>
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-menu-button menu="sideMenu"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      AppARecchio
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button menu="sideMenu"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            AppARecchio
+        </ion-title>
+    </ion-toolbar>
+    <ion-progress-bar [hidden]="piatti || piattierrMsg && insalate || piattierrMsg" type="indeterminate" color="secondary"></ion-progress-bar>
 </ion-header>
 
 <ion-content fullscreen>
-  <div class="ion-padding">
-    <div *ngIf="piatti">
-      <ion-header>
-        <ion-toolbar color="warning">
-          <ion-title>Pizze suggerite dall Chef!</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-list>
-        <ion-item *ngFor="let piatto of piatti">
-          <ion-avatar slot="start">
-            <ion-img [src]="piatto.image"></ion-img>
-          </ion-avatar>
-          <ion-label text-wrap="true">{{ piatto.titolo }} <p> {{ piatto.descrizione }} </p>
-          </ion-label>
+    <div class="ion-padding">
+        <div *ngIf="piatti">
+            <ion-header>
+                <ion-toolbar color="warning">
+                    <ion-title>Pizze suggerite dall Chef!</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-list>
+                <ion-item *ngFor="let piatto of piatti">
+                    <ion-avatar slot="start">
+                        <ion-img [src]="piatto.image"></ion-img>
+                    </ion-avatar>
+                    <ion-label text-wrap="true">{{ piatto.titolo }}
+                        <p> {{ piatto.descrizione }} </p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+        <ion-item *ngIf="!piatti">
+            <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label text-wrap="true">
+                <p>
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </p>
+                <p>
+                    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+            </ion-label>
         </ion-item>
-      </ion-list>
-    </div>
-    <div *ngIf="insalate">
-      <ion-header>
-        <ion-toolbar color="success">
-          <ion-title>Insalatone suggerite dall Chef!</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-list>
-        <ion-item *ngFor="let insalata of insalate">
-          <ion-avatar slot="start">
-            <ion-img [src]="insalata.image"></ion-img>
-          </ion-avatar>
-          <ion-label text-wrap="true">{{ insalata.titolo }} <p> {{ insalata.descrizione }} </p>
-          </ion-label>
+        <div *ngIf="insalate">
+            <ion-header>
+                <ion-toolbar color="success">
+                    <ion-title>Insalatone suggerite dall Chef!</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-list>
+                <ion-item *ngFor="let insalata of insalate">
+                    <ion-avatar slot="start">
+                        <ion-img [src]="insalata.image"></ion-img>
+                    </ion-avatar>
+                    <ion-label text-wrap="true">{{ insalata.titolo }}
+                        <p> {{ insalata.descrizione }} </p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+        <ion-item *ngIf="!insalate">
+            <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label text-wrap="true">
+                <p>
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </p>
+                <p>
+                    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+            </ion-label>
         </ion-item>
-      </ion-list>
+        <div [hidden]="piatti || piattierrMsg && insalate || piattierrMsg">
+            <!-- <app-loader></app-loader> -->
+            <ion-spinner name="bubbles"></ion-spinner>Caricamento in corso
+        </div>
+        {{piattierrMsg}}
     </div>
-    <div [hidden]="piatti || piattierrMsg && insalate || piattierrMsg">
-      <app-loader></app-loader>
-    </div>
-    {{piattierrMsg}}
-  </div>
 </ion-content>
