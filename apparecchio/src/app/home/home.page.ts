@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Piatto } from '../models/piatto';
 import { PiattiService } from '../core/services/piatti.service';
 import { InsalatoneService } from '../core/services/insalatone.service';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -17,18 +17,21 @@ export class HomePage implements OnInit {
   constructor(
     private piattiService: PiattiService,
     private insalateService: InsalatoneService,
-    private loading: LoadingController
+    private loading: LoadingController,
+    private toast: ToastController
   ) { }
 
   ngOnInit(): void {
-    //this.showLoading();
     this.piattiService.getPizzaInEvidenza().subscribe(
       piatti => this.piatti = piatti,
       errMsg => this.piattierrMsg = errMsg
     );
     this.insalateService.getInsalatone().subscribe(
       insalate => this.insalate = insalate,
-      errMsg => this.piattierrMsg = errMsg
+      errMsg => {
+        this.piattierrMsg = errMsg;
+        this.showToast('Errore di rete: ' + errMsg);
+      }
     );
   }
   // async showLoading() {
@@ -38,5 +41,24 @@ export class HomePage implements OnInit {
   //   });
   //   await load.present();
   // }
+
+    async showToast(msg) {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: 2000,
+      cssClass:'miostato',
+      // buttons: [
+      //   {
+      //     side:'start',
+      //     icon: 'heart',
+      //     text:'Favorite',
+      //     handler: ()=>{
+      //       console.log('Hai cliccato sul pulsante del toast');
+      //     }
+      //   }
+      // ]
+    });
+    await toast.present();
+  }
 
 }
