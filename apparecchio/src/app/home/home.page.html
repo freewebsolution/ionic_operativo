@@ -72,10 +72,6 @@
                 </p>
             </ion-label>
         </ion-item>
-        <div [hidden]="piatti || piattierrMsg && insalate || piattierrMsg">
-            <!-- <app-loader></app-loader> -->
-            <ion-spinner name="bubbles"></ion-spinner>Caricamento in corso
-        </div>
         {{piattierrMsg}}
     </div>
 </ion-content>

@@ -9,8 +9,8 @@ import { SociService } from '../core/services/soci.service';
 })
 export class ContattoPage implements OnInit {
 
-  private soci: Team[];
-  private socierrMsg: string;
+  soci: Team[];
+  socierrMsg: string;
   constructor(private sociService: SociService, @Inject('apiUrl') private apiUrl) { }
 
   ngOnInit(): void {

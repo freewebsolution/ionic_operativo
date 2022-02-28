@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.showLoading();
+    //this.showLoading();
     this.piattiService.getPizzaInEvidenza().subscribe(
       piatti => this.piatti = piatti,
       errMsg => this.piattierrMsg = errMsg
@@ -31,12 +31,12 @@ export class HomePage implements OnInit {
       errMsg => this.piattierrMsg = errMsg
     );
   }
-  async showLoading() {
-    const load = await this.loading.create({
-      message: 'Caricamento in corso',
-      duration: 2000
-    });
-    await load.present();
-  }
+  // async showLoading() {
+  //   const load = await this.loading.create({
+  //     message: 'Caricamento in corso',
+  //     duration: 2000
+  //   });
+  //   await load.present();
+  // }
 
 }

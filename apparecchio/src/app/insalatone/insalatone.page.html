@@ -1,29 +1,41 @@
 <ion-header no-border>
-  <ion-toolbar color="dark">
-  <ion-buttons slot="start">
-    <ion-menu-button menu="sideMenu"></ion-menu-button>
-  </ion-buttons>
-    <ion-title>
-      Insalatone
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button menu="sideMenu"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Insalatone
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
-  <div class="ion-padding">
-    <div *ngIf="insalate">
-      <ion-list>
-        <ion-item *ngFor="let insalata of insalate">
-          <ion-avatar slot="start">
-            <ion-img [src]="insalata.image"></ion-img>
-          </ion-avatar>
-          <ion-label text-wrap="true">{{ insalata.titolo }} <p> {{ insalata.descrizione }} </p></ion-label>
+    <div class="ion-padding">
+        <div *ngIf="insalate">
+            <ion-list>
+                <ion-item *ngFor="let insalata of insalate">
+                    <ion-avatar slot="start">
+                        <ion-img [src]="insalata.image"></ion-img>
+                    </ion-avatar>
+                    <ion-label text-wrap="true">{{ insalata.titolo }}
+                        <p> {{ insalata.descrizione }} </p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+        <ion-item *ngIf="!insalate">
+            <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label text-wrap="true">
+                <p>
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </p>
+                <p>
+                    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+            </ion-label>
         </ion-item>
-      </ion-list>
+        {{piattierrMsg}}
     </div>
-    <div [hidden] ="insalate || piattierrMsg">
-      <app-loader></app-loader>
-    </div>
-    {{piattierrMsg}}
-  </div>
 </ion-content>

@@ -56,9 +56,19 @@
                 </ion-item>
             </ion-list>
         </div>
-        <div [hidden]="piatti || piattierrMsg">
-            <app-loader></app-loader>
-        </div>
+        <ion-item *ngIf="!piatti">
+            <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label text-wrap="true">
+                <p>
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </p>
+                <p>
+                    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+            </ion-label>
+        </ion-item>
         {{piattierrMsg}}
     </div>
 </ion-content>
