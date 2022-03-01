@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'insalatone',
     loadChildren: () => import('./insalatone/insalatone.module').then( m => m.InsalatonePageModule)
+  },
+  {
+    path: 'pizza/:id',
+    loadChildren: () => import('./dettagliopizza/dettagliopizza.module').then( m => m.DettagliopizzaPageModule)
   }
 ];
 

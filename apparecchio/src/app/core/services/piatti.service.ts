@@ -16,6 +16,10 @@ export class PiattiService {
     return this.http.get<Piatto[]>(`${apiUrl}piatti`)
                     .pipe(catchError(this.httpError.errorHandler));
   }
+  getPiatto(id: number): Observable<Piatto> {
+    return this.http.get<Piatto>(`${apiUrl}piatti/${id}`)
+      .pipe(catchError(this.httpError.errorHandler));
+  }
 
   getPizzaInEvidenza(): Observable<Piatto[]>{
     return this.http.get<Piatto[]>(`${apiUrl}piatti?inevidenza=true`)

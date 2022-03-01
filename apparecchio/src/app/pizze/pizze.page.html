@@ -46,7 +46,7 @@
     <div class="ion-padding">
         <div *ngIf="piatti">
             <ion-list>
-                <ion-item *ngFor="let piatto of piatti">
+                <ion-item *ngFor="let piatto of piatti" [routerLink]="'/pizza/'+piatto.id" tappable>
                     <ion-avatar slot="start">
                         <ion-img [src]="piatto.image"></ion-img>
                     </ion-avatar>
