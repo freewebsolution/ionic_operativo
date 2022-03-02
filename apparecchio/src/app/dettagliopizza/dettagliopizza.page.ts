@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
 import { PiattiService } from '../core/services/piatti.service';
 import { Piatto } from '../models/piatto';
-
 @Component({
   selector: 'app-dettagliopizza',
   templateUrl: './dettagliopizza.page.html',
@@ -18,13 +18,41 @@ export class DettagliopizzaPage implements OnInit {
   constructor(
     private piattiService: PiattiService,
     private route: ActivatedRoute,
+    private asc: ActionSheetController,
     @Inject('apiUrl') private apiUrl
     ) { }
+
+    async showActionSheet() {
+      const actionSheet = await this.asc.create({
+        header: 'Seleziona...',
+        buttons: [{
+          text: 'Invio Commento',
+          icon: 'send',
+          handler: () => {
+            console.log('clicked select');
+          }
+        }, {
+          text: 'Imposta preferito',
+          icon: 'heart',
+          handler: () => {
+            console.log(' clicked preferite');
+          }
+        }]
+      });
+      await actionSheet.present();
+    }
 
   ngOnInit(): void {
     this.idpizza = this.route.snapshot.params.id;
     this.piattiService.getPiatto(this.idpizza).subscribe(
-      piatto => this.piatto = piatto,
+      piatto =>{
+        this.piatto = piatto;
+        if(this.piatto.commenti.length > 0){
+          let totale: number  = 0;
+          this.piatto.commenti.forEach(el => totale += el.votazione);
+          this.mediavoti = +(totale/this.piatto.commenti.length).toFixed(2);
+        }
+      },
       errMsg => this.piattierrMsg = errMsg
     );
   }

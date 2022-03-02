@@ -1,66 +1,56 @@
 <ion-header no-border>
     <ion-toolbar color="dark">
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="pizze"></ion-back-button>
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button icon-only (click)="showActionSheet()">
+                <ion-icon name="more"></ion-icon>
+            </ion-button>
         </ion-buttons>
         <ion-title>
-            <span *ngIf="piatto">{{piatto.titolo}}</span>
+            Dettaglio Pizze
         </ion-title>
     </ion-toolbar>
+    <ion-progress-bar [hidden]="piatto || piattierrMsg" type="indeterminate"></ion-progress-bar>
 </ion-header>
 
-<ion-content padding fullscreen="">
-    <div *ngIf="piatto">
-        <ion-list>
-            <ion-item>
-                <ion-avatar slot="start">
-                    <ion-img [src]="piatto.image"></ion-img>
-                </ion-avatar>
-                <ion-label text-wrap="true">{{ piatto.titolo }}
-                    <p> {{ piatto.descrizione }} </p>
-                </ion-label>
-                <ion-col size="6" sizeLg="4" sizeXl="4" class="ion-text-center">
-                    {{mediavoti}}
-                    <ion-icon name="star"></ion-icon>
-                </ion-col>
-
-                <ion-col size="6" sizeLg="4" sizeXl="4" class="ion-text-center">
-                    <i [class]="preferita ? 'fas fa-heart' :  'far fa-heart'"></i>Aggiungi ai preferiti
-                </ion-col>
-            </ion-item>
-        </ion-list>
+<ion-content padding fullscreen>
+    <ion-list *ngIf="piatto">
+        <ion-item>
+            <ion-grid fixed>
+                <ion-row align-items-center>
+                    <ion-col size="12" push-lg="4" size-lg="8">
+                        <h2>{{piatto.titolo}}</h2>
+                        <p>{{piatto.descrizione}}</p>
+                    </ion-col>
+                    <ion-col size="12" pull-lg="8" size-lg="3" offset-lg="1">
+                        <ion-img [src]="piatto.image"></ion-img>
+                    </ion-col>
+                </ion-row>
+                <ion-row justify-content-center>
+                    <ion-col size="6" size-lg="4" size-xl="4" class="ion-text-center">
+                        <ion-icon name="star"></ion-icon> {{mediavoti}}
+                    </ion-col>
+                    <ion-col size="6" size-lg="4" size-xl="4" class="ion-text-center">
+                        <i [class]="preferita ? 'fas fa-heart' : 'far fa-heart'"></i> Aggiungi ai preferiti
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <div *ngIf="piattierrMsg">
+        {{piattierrMsg}}
     </div>
-    <ion-item *ngIf="!piatto">
-        <ion-avatar slot="start">
-            <ion-skeleton-text animated></ion-skeleton-text>
-        </ion-avatar>
-        <ion-label text-wrap="true">
-            <p>
-                <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-            </p>
-            <p>
-                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-            </p>
-        </ion-label>
-    </ion-item>
-    {{piattierrMsg}}
     <div *ngIf="piatto">
-        <ion-header>
-            <ion-toolbar color="warning">
-                <ion-title>Pizze suggerite dall Chef!</ion-title>
-            </ion-toolbar>
-        </ion-header>
         <ion-list>
             <ion-item *ngFor="let commento of piatto.commenti">
                 <ion-label text-wrap="true">{{ commento.autore }}
                     <p> {{ commento.commento }} </p>
-                    <p>Votazione: {{commento.rating}}</p>
+                    <p> Votazione: {{ commento.rationg }}</p>
                 </ion-label>
             </ion-item>
         </ion-list>
     </div>
-</ion-content>
-
-<ion-content>
 
 </ion-content>
