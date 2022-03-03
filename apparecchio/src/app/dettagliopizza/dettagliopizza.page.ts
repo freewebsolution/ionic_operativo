@@ -54,6 +54,7 @@ export class DettagliopizzaPage implements OnInit {
       await modal.present();
       const {data}=await modal.onDidDismiss();
       console.log('Dati passati in chiusura '+JSON.stringify(data));
+      this.piatto.commenti.push(data);
 
     }
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-
 @Component({
   selector: 'app-commento',
   templateUrl: './commento.page.html',
@@ -15,8 +15,8 @@ export class CommentoPage implements OnInit {
   onClick() {
     this.viewModalController.dismiss({nome: 'Lucio'});
   }
-  onSubmit(form) {
-
+  onSubmit(form: any) {
+    this.viewModalController.dismiss(form.value);
   }
 
 }

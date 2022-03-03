@@ -12,13 +12,17 @@
 <ion-content>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <ion-item>
-            <ion-label>Autore</ion-label>
+            <ion-label position="floating">Autore</ion-label>
+            <ion-input type="text" name="autore" placeholder="Autore..." ngModel required></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Gradimento</ion-label>
+            <ion-range name="votazione" min="0" max="5" pin="true" snaps="true" step="1" ticks="true" value="0" color="primary" ngModel required>
+            </ion-range>
         </ion-item>
         <ion-item>
-            <ion-label>Commento</ion-label>
+            <ion-label position="floating">Commento</ion-label>
+            <ion-textarea name="commento" placeholder="Commento..." ngModel required></ion-textarea>
         </ion-item>
         <ion-button type="submit" [disabled]="form.invalid" expand="block" fill="clear" shape="round">
             Invia
