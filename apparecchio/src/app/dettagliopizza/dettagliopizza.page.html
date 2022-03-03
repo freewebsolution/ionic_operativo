@@ -30,7 +30,7 @@
                 </ion-row>
                 <ion-row justify-content-center>
                     <ion-col size="6" size-lg="4" size-xl="4" class="ion-text-center">
-                        <ion-icon name="star"></ion-icon> {{mediavoti}}
+                        <ion-icon name="star"></ion-icon> {{mediavoti | number:'1.2'}}
                     </ion-col>
                     <ion-col size="6" size-lg="4" size-xl="4" class="ion-text-center">
                         <i [class]="preferita ? 'fas fa-heart' : 'far fa-heart'"></i> Aggiungi ai preferiti
@@ -47,10 +47,23 @@
             <ion-item *ngFor="let commento of piatto.commenti">
                 <ion-label text-wrap="true">{{ commento.autore }}
                     <p> {{ commento.commento }} </p>
-                    <p> Votazione: {{ commento.votazione }}</p>
+                    <p> Votazione: {{ commento.votazione | number:'1.2' }}</p>
                 </ion-label>
             </ion-item>
         </ion-list>
     </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button>
+                <ion-icon name="logo-ionic"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button>
+                <ion-icon name="logo-angular"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
 
 </ion-content>
