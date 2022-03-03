@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-commento',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commento.page.scss'],
 })
 export class CommentoPage implements OnInit {
-
-  constructor() { }
+@Input()titolo: string;
+  constructor(private viewModalController: ModalController) { }
 
   ngOnInit() {
+  }
+  onClick() {
+    this.viewModalController.dismiss({nome: 'Lucio'});
+  }
+  onSubmit(form) {
+
   }
 
 }

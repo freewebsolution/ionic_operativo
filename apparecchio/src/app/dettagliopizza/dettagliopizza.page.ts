@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
+import { stringify } from 'querystring';
+import { CommentoPage } from '../commento/commento.page';
 import { PiattiService } from '../core/services/piatti.service';
 import { Piatto } from '../models/piatto';
 @Component({
@@ -19,6 +21,7 @@ export class DettagliopizzaPage implements OnInit {
     private piattiService: PiattiService,
     private route: ActivatedRoute,
     private asc: ActionSheetController,
+    private modalController: ModalController,
     @Inject('apiUrl') private apiUrl
     ) { }
 
@@ -29,7 +32,8 @@ export class DettagliopizzaPage implements OnInit {
           text: 'Invio Commento',
           icon: 'send',
           handler: () => {
-            console.log('clicked select');
+            this.showModal();
+            console.log('clicked comment');
           }
         }, {
           text: 'Imposta preferito',
@@ -40,6 +44,17 @@ export class DettagliopizzaPage implements OnInit {
         }]
       });
       await actionSheet.present();
+    }
+    async showModal() {
+      const modal = await this.modalController.create({
+      component: CommentoPage,
+      componentProps: { titolo: this.piatto.titolo }
+      });
+
+      await modal.present();
+      const {data}=await modal.onDidDismiss();
+      console.log('Dati passati in chiusura '+JSON.stringify(data));
+
     }
 
   ngOnInit(): void {

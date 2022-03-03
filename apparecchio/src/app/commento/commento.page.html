@@ -1,9 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>commento</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="onClick()">
+                <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Commento Pizza {{titolo}}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <ion-item>
+            <ion-label>Autore</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Gradimento</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Commento</ion-label>
+        </ion-item>
+        <ion-button type="submit" [disabled]="form.invalid" expand="block" fill="clear" shape="round">
+            Invia
+        </ion-button>
+    </form>
 </ion-content>
