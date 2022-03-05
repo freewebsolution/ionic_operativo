@@ -155,6 +155,35 @@
       "bio": "Dopo una lunga carriera come ing. Wahing Up finanzia l'apertura di un nuovo locale dedicato ai buon gustai del sapere chiamandolo AppKitchen, con le 20 più amate specialità del web per una cucina multipiattaforma."
     }
   ],
-  "messaggi": [],
-  "preferiti" : []
+  "messaggi": [
+    {
+      "nome": "lucio",
+      "email": "ticalilucio@gmail.com",
+      "oggetto": "prova",
+      "note": "prova",
+      "id": 1
+    },
+    {
+      "nome": "mattia",
+      "email": "matty@gmail.com",
+      "oggetto": "prove",
+      "note": "demo",
+      "id": 2
+    },
+    {
+      "nome": "Giorgina",
+      "email": "giorgina@gmail.com",
+      "oggetto": "demo",
+      "note": "demo",
+      "id": 3
+    },
+    {
+      "nome": "Enzina",
+      "email": "enzinalaverde@gmail.com",
+      "oggetto": "demo",
+      "note": "demo",
+      "id": 4
+    }
+  ],
+  "preferiti": []
 }

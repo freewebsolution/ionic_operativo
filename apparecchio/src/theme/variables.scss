@@ -241,3 +241,11 @@ ion-menu ion-item,
 .miostato {
     --background: #e7da1e;
 }
+
+.toastSuccess {
+    --background: green;
+}
+
+.toastError {
+    --background: red;
+}

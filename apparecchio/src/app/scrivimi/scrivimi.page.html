@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="onClick()">
+                <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Scrivimi</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input type="text" name="nome" placeholder="Nome..." ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" name="email" placeholder="Email..." ngModel required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Oggetto</ion-label>
+            <ion-input type="text" name="oggetto" placeholder="Oggetto..." ngModel required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Note</ion-label>
+            <ion-textarea name="note" placeholder="Note..." ngModel required></ion-textarea>
+        </ion-item>
+        <ion-button type="submit" [disabled]="form.invalid" expand="block" fill="clear" shape="round">
+            Invia
+        </ion-button>
+    </form>
+</ion-content>

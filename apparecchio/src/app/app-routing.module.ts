@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'pizza/:id',
     loadChildren: () => import('./dettagliopizza/dettagliopizza.module').then( m => m.DettagliopizzaPageModule)
+  },
+  {
+    path: 'scrivimi',
+    loadChildren: () => import('./scrivimi/scrivimi.module').then( m => m.ScrivimiPageModule)
   }
 ];
 
