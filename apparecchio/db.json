@@ -1,189 +1,182 @@
 {
-  "piatti": [
-    {
-      "id": 1,
-      "titolo": "Spanara",
-      "image": "./assets/images/g1.png",
-      "label": "New",
-      "prezzo": "13,00",
-      "categoria": "pizze",
-      "inevidenza": "true",
-      "descrizione": "Mozz. Fior di latte, Taleggio, Noci, Carpaccio di filietto d'Angus Irlandese, polvere di Olive Taggiasche, uvetta Sultanina",
-      "commenti": [
-        {
-          "votazione": 5,
-          "commento": "Un'armonia di sapori che convivono sapientemente",
-          "autore": "Il gallo"
+    "piatti": [{
+            "id": 1,
+            "titolo": "Spanara",
+            "image": "./assets/images/g1.png",
+            "label": "New",
+            "prezzo": "13,00",
+            "categoria": "pizze",
+            "inevidenza": "true",
+            "descrizione": "Mozz. Fior di latte, Taleggio, Noci, Carpaccio di filietto d'Angus Irlandese, polvere di Olive Taggiasche, uvetta Sultanina",
+            "commenti": [{
+                    "votazione": 5,
+                    "commento": "Un'armonia di sapori che convivono sapientemente",
+                    "autore": "Il gallo"
+                },
+                {
+                    "votazione": 4,
+                    "commento": "Il sinfonia di sulla terra!",
+                    "autore": "Giacomo Pollini"
+                },
+                {
+                    "votazione": 3,
+                    "commento": "Una sfuriata di sapori non troppo esaltanti",
+                    "autore": "Giovanni Ariosto"
+                }
+            ]
         },
         {
-          "votazione": 4,
-          "commento": "Il sinfonia di sulla terra!",
-          "autore": "Giacomo Pollini"
+            "id": 2,
+            "titolo": "Ciosa",
+            "image": "./assets/images/g2.png",
+            "label": "New",
+            "prezzo": "16.99",
+            "categoria": "pizze",
+            "inevidenza": "false",
+            "descrizione": "Mozz. Fior di latte, Capesante lardellate, Mazzancolle sgusciato, granella di Pistacchi di Bronte, olio di basicolo, basilico fresco.",
+            "commenti": [{
+                    "votazione": 5,
+                    "commento": "Una sfuriata di sapori non troppo esaltanti",
+                    "autore": "Giovanni Ariosto"
+                },
+                {
+                    "votazione": 5,
+                    "commento": "Un'armonia di sapori che convivono sapientemente",
+                    "autore": "Il gallo"
+                },
+                {
+                    "votazione": 4,
+                    "commento": "Il sinfonia di sulla terra!",
+                    "autore": "Giacomo Pollini"
+                }
+            ]
         },
         {
-          "votazione": 3,
-          "commento": "Una sfuriata di sapori non troppo esaltanti",
-          "autore": "Giovanni Ariosto"
+            "id": 3,
+            "titolo": "Pilu",
+            "image": "./assets/images/g3.png",
+            "label": "",
+            "prezzo": "15,00",
+            "categoria": "pizze",
+            "inevidenza": "false",
+            "descrizione": "Mozz. Fior di latte, Basilico fresco, Pinoli, Grana Padano, Pomodrori secchi, Stracciatella fresca, Olive Taggische,Bresaola",
+            "commenti": [{
+                    "votazione": 4,
+                    "commento": "Un'armonia di sapori che convivono sapientemente",
+                    "autore": "Il gallo"
+                },
+                {
+                    "votazione": 4,
+                    "commento": "Una sfuriata di sapori non troppo esaltanti",
+                    "autore": "Giovanni Ariosto"
+                },
+                {
+                    "votazione": 4,
+                    "commento": "Il sinfonia di sulla terra!",
+                    "autore": "Giacomo Pollini"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "titolo": "La Malga",
+            "image": "./assets/images/g4.png",
+            "label": "",
+            "prezzo": "13,00",
+            "categoria": "pizze",
+            "inevidenza": "false",
+            "descrizione": "Mozz. Fior di latte, formaggio Asiago di Malga, Salamino Piccante, fiocco di spuma di Rapa Rossa, Pomodorini Caramellati, olive Taggiasche, Basilico Fresco",
+            "commenti": [{
+                    "votazione": 5,
+                    "commento": "Un'armonia di sapori che convivono sapientemente",
+                    "autore": "Il gallo"
+                },
+                {
+                    "votazione": 2,
+                    "commento": "Una sfuriata di sapori non troppo esaltanti",
+                    "autore": "Giovanni Ariosto"
+                }
+            ],
+            "autore": "lucio",
+            "votazione": 1,
+            "commento": "loi"
         }
-      ]
-    },
-    {
-      "id": 2,
-      "titolo": "Ciosa",
-      "image": "./assets/images/g2.png",
-      "label": "New",
-      "prezzo": "16.99",
-      "categoria": "pizze",
-      "inevidenza": "false",
-      "descrizione": "Mozz. Fior di latte, Capesante lardellate, Mazzancolle sgusciato, granella di Pistacchi di Bronte, olio di basicolo, basilico fresco.",
-      "commenti": [
-        {
-          "votazione": 5,
-          "commento": "Una sfuriata di sapori non troppo esaltanti",
-          "autore": "Giovanni Ariosto"
+    ],
+    "insalate": [{
+            "id": 1,
+            "titolo": "Nizzarda",
+            "image": "./assets/images/ins1.jpg",
+            "label": "",
+            "prezzo": "9,00",
+            "categoria": "insalatone",
+            "inevidenza": "true",
+            "descrizione": "Insalata Novella, Gentile, Rucola, Radicchio, pomodorini, oliver verdi, tonno, mozz. Fior di Latte, uova, cipolla di tropea, patate lesse, acciughe",
+            "commenti": []
         },
         {
-          "votazione": 5,
-          "commento": "Un'armonia di sapori che convivono sapientemente",
-          "autore": "Il gallo"
-        },
-        {
-          "votazione": 4,
-          "commento": "Il sinfonia di sulla terra!",
-          "autore": "Giacomo Pollini"
+            "id": 1,
+            "titolo": "Iceberg",
+            "image": "./assets/images/ins2.jpg",
+            "label": "",
+            "prezzo": "12,00",
+            "categoria": "insalatone",
+            "inevidenza": "true",
+            "descrizione": "Insalata Iceberg croccante, insalatina dolce o valeriana, rucola, foglie di spinacino, semi di canapa, semi di girasole, ribes rosso disidratato",
+            "commenti": []
         }
-      ]
-    },
-    {
-      "id": 3,
-      "titolo": "Pilu",
-      "image": "./assets/images/g3.png",
-      "label": "",
-      "prezzo": "15,00",
-      "categoria": "pizze",
-      "inevidenza": "false",
-      "descrizione": "Mozz. Fior di latte, Basilico fresco, Pinoli, Grana Padano, Pomodrori secchi, Stracciatella fresca, Olive Taggische,Bresaola",
-      "commenti": [
-        {
-          "votazione": 4,
-          "commento": "Un'armonia di sapori che convivono sapientemente",
-          "autore": "Il gallo"
+    ],
+    "impasti": [{
+            "id": 1,
+            "titolo": "Impasto Integrale Antico",
+            "image": "./assets/images/imp1.png",
+            "inevidenza": "true",
+            "slogan": "Gusto faraonico",
+            "descrizione": "Impasto di antichissimo frumento italiano completamente integro e macinato a pietra, ricco di fribe e vitamina B."
         },
         {
-          "votazione": 4,
-          "commento": "Una sfuriata di sapori non troppo esaltanti",
-          "autore": "Giovanni Ariosto"
-        },
-        {
-          "votazione": 4,
-          "commento": "Il sinfonia di sulla terra!",
-          "autore": "Giacomo Pollini"
+            "id": 2,
+            "titolo": "Impasto Classico",
+            "image": "./assets/images/imp2.png",
+            "inevidenza": "true",
+            "slogan": "Gusto fragrante",
+            "descrizione": "Impasto con pasta madre di farine pregiatissime, 48 ore di maturazione naturale, 75% di idratazione e nessun lievito aggiunto"
         }
-      ]
-    },
-    {
-      "id": 4,
-      "titolo": "La Malga",
-      "image": "./assets/images/g4.png",
-      "label": "",
-      "prezzo": "13,00",
-      "categoria": "pizze",
-      "inevidenza": "false",
-      "descrizione": "Mozz. Fior di latte, formaggio Asiago di Malga, Salamino Piccante, fiocco di spuma di Rapa Rossa, Pomodorini Caramellati, olive Taggiasche, Basilico Fresco",
-      "commenti": [
-        {
-          "votazione": 5,
-          "commento": "Un'armonia di sapori che convivono sapientemente",
-          "autore": "Il gallo"
+    ],
+    "chisiamo": [{
+        "id": 1,
+        "nome": "Lucio Ticali",
+        "image": "./assets/images/team1.png",
+        "ruolo": "Chief Kitchen Officer",
+        "bio": "Dopo una lunga carriera come ing. Wahing Up finanzia l'apertura di un nuovo locale dedicato ai buon gustai del sapere chiamandolo AppKitchen, con le 20 più amate specialità del web per una cucina multipiattaforma."
+    }],
+    "messaggi": [{
+            "nome": "lucio",
+            "email": "ticalilucio@gmail.com",
+            "oggetto": "prova",
+            "note": "prova",
+            "id": 1
         },
         {
-          "votazione": 2,
-          "commento": "Una sfuriata di sapori non troppo esaltanti",
-          "autore": "Giovanni Ariosto"
+            "nome": "mattia",
+            "email": "matty@gmail.com",
+            "oggetto": "prove",
+            "note": "demo",
+            "id": 2
+        },
+        {
+            "nome": "Giorgina",
+            "email": "giorgina@gmail.com",
+            "oggetto": "demo",
+            "note": "demo",
+            "id": 3
+        },
+        {
+            "nome": "Enzina",
+            "email": "enzinalaverde@gmail.com",
+            "oggetto": "demo",
+            "note": "demo",
+            "id": 4
         }
-      ]
-    }
-  ],
-  "insalate": [
-    {
-      "id": 1,
-      "titolo": "Nizzarda",
-      "image": "./assets/images/ins1.jpg",
-      "label": "",
-      "prezzo": "9,00",
-      "categoria": "insalatone",
-      "inevidenza": "true",
-      "descrizione": "Insalata Novella, Gentile, Rucola, Radicchio, pomodorini, oliver verdi, tonno, mozz. Fior di Latte, uova, cipolla di tropea, patate lesse, acciughe",
-      "commenti": []
-    },
-    {
-      "id": 1,
-      "titolo": "Iceberg",
-      "image": "./assets/images/ins2.jpg",
-      "label": "",
-      "prezzo": "12,00",
-      "categoria": "insalatone",
-      "inevidenza": "true",
-      "descrizione": "Insalata Iceberg croccante, insalatina dolce o valeriana, rucola, foglie di spinacino, semi di canapa, semi di girasole, ribes rosso disidratato",
-      "commenti": []
-    }
-  ],
-  "impasti": [
-    {
-      "id": 1,
-      "titolo": "Impasto Integrale Antico",
-      "image": "./assets/images/imp1.png",
-      "inevidenza": "true",
-      "slogan": "Gusto faraonico",
-      "descrizione": "Impasto di antichissimo frumento italiano completamente integro e macinato a pietra, ricco di fribe e vitamina B."
-    },
-    {
-      "id": 2,
-      "titolo": "Impasto Classico",
-      "image": "./assets/images/imp2.png",
-      "inevidenza": "true",
-      "slogan": "Gusto fragrante",
-      "descrizione": "Impasto con pasta madre di farine pregiatissime, 48 ore di maturazione naturale, 75% di idratazione e nessun lievito aggiunto"
-    }
-  ],
-  "chisiamo": [
-    {
-      "id": 1,
-      "nome": "Lucio Ticali",
-      "image": "./assets/images/team1.png",
-      "ruolo": "Chief Kitchen Officer",
-      "bio": "Dopo una lunga carriera come ing. Wahing Up finanzia l'apertura di un nuovo locale dedicato ai buon gustai del sapere chiamandolo AppKitchen, con le 20 più amate specialità del web per una cucina multipiattaforma."
-    }
-  ],
-  "messaggi": [
-    {
-      "nome": "lucio",
-      "email": "ticalilucio@gmail.com",
-      "oggetto": "prova",
-      "note": "prova",
-      "id": 1
-    },
-    {
-      "nome": "mattia",
-      "email": "matty@gmail.com",
-      "oggetto": "prove",
-      "note": "demo",
-      "id": 2
-    },
-    {
-      "nome": "Giorgina",
-      "email": "giorgina@gmail.com",
-      "oggetto": "demo",
-      "note": "demo",
-      "id": 3
-    },
-    {
-      "nome": "Enzina",
-      "email": "enzinalaverde@gmail.com",
-      "oggetto": "demo",
-      "note": "demo",
-      "id": 4
-    }
-  ],
-  "preferiti": []
+    ],
+    "preferiti": []
 }

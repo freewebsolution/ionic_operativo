@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { Piatto } from '../../models/piatto';
 import { ErrorhttpService } from './errorhttp.service';
 import {apiUrl} from '../../config/apiUrl';
+import { NgForm } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,5 +26,10 @@ export class PiattiService {
     return this.http.get<Piatto[]>(`${apiUrl}piatti?inevidenza=true`)
                     .pipe(catchError(this.httpError.errorHandler));
   }
+  postCommento(data: Piatto, id: number): Observable<Piatto> {
+    return this.http.post<Piatto>(`${apiUrl}piatti/${id}`, data)
+      .pipe(catchError(this.httpError.errorHandler));
+  }
+
 }
 

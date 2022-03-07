@@ -6,6 +6,8 @@ import { stringify } from 'querystring';
 import { CommentoPage } from '../commento/commento.page';
 import { PiattiService } from '../core/services/piatti.service';
 import { Piatto } from '../models/piatto';
+import {Commento} from '../models/commento';
+
 @Component({
   selector: 'app-dettagliopizza',
   templateUrl: './dettagliopizza.page.html',
@@ -13,6 +15,8 @@ import { Piatto } from '../models/piatto';
 })
 export class DettagliopizzaPage implements OnInit {
   piatto: Piatto;
+  piatti: Piatto[]=[];
+  commento: Commento[] = [];
   piattierrMsg: string;
   mediavoti: number;
   preferita: boolean = false;
@@ -54,9 +58,20 @@ export class DettagliopizzaPage implements OnInit {
       await modal.present();
       const {data}=await modal.onDidDismiss();
       console.log('Dati passati in chiusura '+JSON.stringify(data));
-      this.piatto.commenti.push(data);
+      this.postCommento(data);
 
     }
+  postCommento(data: Piatto) {
+    this.piattiService.postCommento(data, this.idpizza)
+      .subscribe(
+        res => {
+          this.idpizza = this.route.snapshot.params.id;
+          console.log('Ciao io sto inviando questi: ',res);
+          this.piatto = res;
+        }
+      );
+
+  }
 
   ngOnInit(): void {
     this.idpizza = this.route.snapshot.params.id;
